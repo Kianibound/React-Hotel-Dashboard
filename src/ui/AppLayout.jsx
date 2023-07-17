@@ -3,7 +3,6 @@ import Header from "./Header";
 import Siderbar from "./Siderbar";
 import { styled } from "styled-components";
 
-
 const StyledAppLayout = styled.div`
   display: grid;
   grid-template-columns: 26rem 1fr;
@@ -32,7 +31,9 @@ const AppLayout = () => {
       <Siderbar />
 
       <Main>
-        <Outlet />
+        <Container>
+          <Outlet />
+        </Container>
       </Main>
     </StyledAppLayout>
   );
