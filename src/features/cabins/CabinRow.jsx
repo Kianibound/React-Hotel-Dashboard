@@ -1,4 +1,6 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
+import { formatCurrency } from "../../utils/helpers";
 
 const TableRow = styled.div`
   display: grid;
@@ -38,3 +40,20 @@ const Discount = styled.div`
   font-weight: 500;
   color: var(--color-green-700);
 `;
+
+// eslint-disable-next-line react/prop-types
+const CabinRow = ({ cabin }) => {
+  const { name, maxCapacity, discount, image, regularPrice } = cabin;
+  return (
+    <TableRow role="row">
+      <Img src={image} />
+      <Cabin>{name}</Cabin>
+      <Price>{formatCurrency(regularPrice)}</Price>
+      <Price>{formatCurrency(discount)}</Price>
+      <div>{maxCapacity}</div>
+      <button>Delete</button>
+    </TableRow>
+  );
+};
+
+export default CabinRow;
