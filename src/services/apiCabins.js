@@ -17,8 +17,6 @@ export async function createEditCabins(newCabin, id) {
     ? newCabin.image
     : `${Math.random()}-${newCabin.image.name}`.replaceAll('/,"');
 
-  // https://uvsutixdsvnkdtbxeqgb.supabase.co/storage/v1/object/public/cabin-images/cabin-001.jpg
-
   const imagePath = `${supabaseUrl}/storage/v1/object/public/cabin-images/${imageName}`;
 
   // create/edit A cabin

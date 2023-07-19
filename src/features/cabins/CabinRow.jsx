@@ -64,6 +64,7 @@ const CabinRow = ({ cabin }) => {
   } = cabin;
 
   function handleDuplicate() {
+    // TODO : Problem with duplicating Image. Image Does not Duplicate
     createCabin({
       name: `Duplicate of ${name}`,
       maxCapacity,
