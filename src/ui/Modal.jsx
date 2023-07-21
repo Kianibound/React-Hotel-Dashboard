@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-import { HiXCircle } from "react-icons/hi";
+import { HiMiniXMark } from "react-icons/hi2";
 import { createPortal } from "react-dom";
 import { cloneElement, createContext, useContext, useState } from "react";
 import useOutSideClick from "../hooks/useOutSideClick";
@@ -84,7 +84,7 @@ function Window({ children, name }) {
     <Overlay>
       <StyledModal ref={ref}>
         <Button onClick={close}>
-          <HiXCircle />
+          <HiMiniXMark />
         </Button>
 
         <div>
