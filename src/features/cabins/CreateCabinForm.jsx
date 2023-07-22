@@ -105,10 +105,8 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
         <Input
           type="number"
           id="discount"
-          defaultValue={0}
           disabled={isWorking}
           {...register("discount", {
-            required: "This Field Is Requiered",
             min: {
               value: 1,
             },

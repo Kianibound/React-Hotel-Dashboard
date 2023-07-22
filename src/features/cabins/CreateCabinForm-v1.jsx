@@ -81,9 +81,7 @@ function CreateCabinForm({ cabin }) {
         <Input
           type="number"
           id="discount"
-          defaultValue={0}
-          {...register("discount", {
-            required: "This Field Is Requiered",
+            {...register("discount", {
             min: {
               value: 1,
             },
