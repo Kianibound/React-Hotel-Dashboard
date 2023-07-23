@@ -17,4 +17,6 @@ export function useDeleteCabin() {
   });
 
   return { isDeleting, deleteCabin };
+
+  //TODO : Refactor this hook remember
 }
