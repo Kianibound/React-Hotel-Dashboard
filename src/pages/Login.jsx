@@ -13,7 +13,6 @@ const LoginLayout = styled.main`
   background-color: var(--color-grey-50);
 `;
 
-
 function Login() {
   return (
     <LoginLayout>
