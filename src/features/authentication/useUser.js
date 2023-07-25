@@ -9,3 +9,4 @@ export function useUser() {
 
   return { user, isLoading, isAuthenticated : user?.role === 'authenticated' };
 }
+
