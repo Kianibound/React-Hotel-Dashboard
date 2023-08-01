@@ -1,9 +1,13 @@
 import BookingRow from "./BookingRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
+import { useBookings } from "./useBookings";
+import Spinner from "../../ui/Spinner";
 
 function BookingTable() {
-  const bookings = [];
+  const { isLoading, bookings, error } = useBookings();
+
+  if(isLoading) return <Spinner />
 
   return (
     <Menus>
@@ -11,9 +15,10 @@ function BookingTable() {
         <Table.Header>
           <div>Cabin</div>
           <div>Guest</div>
-          <div>Dates</div>
           <div>Status</div>
           <div>Amount</div>
+          <div>Nights</div>
+          <div>Guests</div>
         </Table.Header>
 
         <Table.Body

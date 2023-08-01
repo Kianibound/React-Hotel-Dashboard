@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import styled from "styled-components";
 import { format, isToday } from "date-fns";
 
@@ -63,7 +64,7 @@ function BookingRow({
         <span>{email}</span>
       </Stacked>
 
-      <Stacked>
+      {/* <Stacked>
         <span>
           {isToday(new Date(startDate))
             ? "Today"
@@ -74,11 +75,12 @@ function BookingRow({
           {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
           {format(new Date(endDate), "MMM dd yyyy")}
         </span>
-      </Stacked>
-
+      </Stacked> */}
+      
       <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
-
       <Amount>{formatCurrency(totalPrice)}</Amount>
+      <Amount>{numNights}</Amount>
+      <Amount>{numGuests}</Amount>
     </Table.Row>
   );
 }

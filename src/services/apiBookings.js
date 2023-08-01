@@ -2,13 +2,14 @@ import { getToday } from "../utils/helpers";
 import supabase from "./supabase";
 
 export async function getBookings(id) {
-
-  //cabins(*), guests(*)
+  //
   const { data, error } = await supabase
     .from("bookings")
-    .select("*")
-    .eq("id", id)
-    .single();
+    .select(
+      "id, numNights,status,totalPrice, numNights,numGuests,cabins(name), guests(fullName, email)"
+    );
+  // .eq("id", id)
+  // .single();
 
   if (error) {
     console.error(error);
