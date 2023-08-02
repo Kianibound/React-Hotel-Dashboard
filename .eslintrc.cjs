@@ -17,5 +17,6 @@ module.exports = {
       "warn",
       { allowConstantExport: false },
     ],
+    "react/prop-types": 0,
   },
 };
