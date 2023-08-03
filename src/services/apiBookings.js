@@ -7,14 +7,20 @@ export async function getBookings({ filter, sortBy }) {
   let query = supabase
     .from("bookings")
     .select(
-      "id, numNights,status,totalPrice, numNights,numGuests,cabins(name), guests(fullName, email)"
+      "*,id, numNights,status,totalPrice, numNights,numGuests,cabins(name), guests(fullName, email)"
     );
   // .eq("id", id)
   // .single();
 
-  // Filter 
-  if(filter !== null) query = query.eq(filter.field, filter.value)
+  // Filter Logic
+  if (filter) query = query.eq(filter.field, filter.value);
   const { data, error } = await query;
+
+  // Sort Logic
+  if (sortBy)
+    query = query.order(sortBy.field, {
+      ascending: sortBy.direction === "asc",
+    });
 
   if (error) {
     console.error(error);

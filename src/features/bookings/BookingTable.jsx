@@ -7,7 +7,7 @@ import Spinner from "../../ui/Spinner";
 function BookingTable() {
   const { isLoading, bookings, error } = useBookings();
 
-  if(isLoading) return <Spinner />
+  if (isLoading) return <Spinner />;
 
   return (
     <Menus>
@@ -17,8 +17,6 @@ function BookingTable() {
           <div>Guest</div>
           <div>Status</div>
           <div>Amount</div>
-          <div>Nights</div>
-          <div>Guests</div>
         </Table.Header>
 
         <Table.Body

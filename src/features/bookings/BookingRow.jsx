@@ -41,12 +41,11 @@ function BookingRow({
     created_at,
     startDate,
     endDate,
-    numNights,
-    numGuests,
     totalPrice,
     status,
     guests: { fullName: guestName, email },
     cabins: { name: cabinName },
+    numNights
   },
 }) {
   const statusToTagName = {
@@ -64,7 +63,7 @@ function BookingRow({
         <span>{email}</span>
       </Stacked>
 
-      {/* <Stacked>
+      <Stacked>
         <span>
           {isToday(new Date(startDate))
             ? "Today"
@@ -75,12 +74,12 @@ function BookingRow({
           {format(new Date(startDate), "MMM dd yyyy")} &mdash;{" "}
           {format(new Date(endDate), "MMM dd yyyy")}
         </span>
-      </Stacked> */}
-      
+      </Stacked>
+
       <Tag type={statusToTagName[status]}>{status.replace("-", " ")}</Tag>
       <Amount>{formatCurrency(totalPrice)}</Amount>
-      <Amount>{numNights}</Amount>
-      <Amount>{numGuests}</Amount>
+      {/* <Amount>{numNights}</Amount>
+      <Amount>{numGuests}</Amount> */}
     </Table.Row>
   );
 }
