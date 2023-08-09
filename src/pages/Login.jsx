@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import LoginForm from "../features/authentication/LoginForm";
 import Heading from "../ui/Heading";
-import Logo from "../ui/Logo";
 
 const LoginLayout = styled.main`
 	min-height: 100vh;
@@ -25,6 +24,7 @@ const Box = styled.div`
 	font-size: 10px;
 	font-weight: bold;
 	margin: 0 auto;
+  color: black;
 `;
 
 function Login() {
